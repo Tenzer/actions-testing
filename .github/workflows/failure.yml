@@ -1,0 +1,7 @@
+on: push
+
+jobs:
+  failure:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: exit 1

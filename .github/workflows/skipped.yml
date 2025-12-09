@@ -1,0 +1,8 @@
+on: push
+
+jobs:
+  skipped:
+    runs-on: ubuntu-24.04
+    if: false
+    steps:
+      - run: echo "Hello, World!"
