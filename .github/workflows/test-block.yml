@@ -17,9 +17,14 @@ jobs:
 
     steps:
       - name: Check this is the latest workflow run
-        uses: Tenzer/block-old-workflow-rerun@2f5a5ca323cc2f9c9394a4268fa6b30b0f970021
+        id: block-workflow-run
+        uses: Tenzer/block-old-workflow-rerun@6336f583842cc61ec54552fd054cb77bc14aa34b
         with:
           branch: main
+
+      - name: Deploy allow status
+        if: always()
+        run: echo The deploy status is ${{ steps.block-workflow-run.allowed }}
 
       - name: Deploy
         run: sleep ${{ github.event.inputs.delay }}
