@@ -24,7 +24,7 @@ jobs:
 
       - name: Deploy allow status
         if: always()
-        run: echo The deploy status is ${{ steps.block-workflow-run.allowed }}
+        run: echo The deploy status is ${{ steps.block-workflow-run.outputs.allowed }}
 
       - name: Deploy
         run: sleep ${{ github.event.inputs.delay }}
