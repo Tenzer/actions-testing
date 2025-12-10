@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Check this is the latest workflow run
         id: block-workflow-run
-        uses: Tenzer/block-old-workflow-rerun@6336f583842cc61ec54552fd054cb77bc14aa34b
+        uses: Tenzer/block-old-workflow-rerun@b8384f6ab1c8bff80adf1f57949e9b935c8a7815
         with:
           fail-on-old-rerun: false
 
