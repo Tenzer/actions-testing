@@ -20,7 +20,7 @@ jobs:
         id: block-workflow-run
         uses: Tenzer/block-old-workflow-rerun@6336f583842cc61ec54552fd054cb77bc14aa34b
         with:
-          branch: main
+          fail-on-old-rerun: false
 
       - name: Deploy allow status
         if: always()
