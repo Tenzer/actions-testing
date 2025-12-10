@@ -1,0 +1,23 @@
+---
+name: Test block rerunning old workflow runs
+
+on:
+  workflow_dispatch:
+    inputs:
+      delay:
+        description: How long to pretend the deploy takes in seconds
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check this is the latest workflow run
+        uses: Tenzer/block-old-workflow-rerun@4040c94a1985fbd933a2182b03252f9071068c85
+
+      - name: Deploy
+        run: sleep ${{ github.event.inputs.version }}
