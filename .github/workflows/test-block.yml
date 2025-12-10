@@ -22,4 +22,4 @@ jobs:
           branch: main
 
       - name: Deploy
-        run: sleep ${{ github.event.inputs.version }}
+        run: sleep ${{ github.event.inputs.delay }}
